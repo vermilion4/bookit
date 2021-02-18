@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min(1).css' />
+    <link rel="stylesheet" href="/stylesheets/css/all.css">
+    <script src="/javascripts/js/bootstrap.bundle.js"></script>
+
+</head>
+<body>
+
+<div class="header">
+    <i class="fas fa-book-reader fa-7x"></i><h1 style="display: inline"><%= title %></h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/library">Library</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addbook">Add Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/" method="post">
+                <input class="form-control mr-sm-2" type="text" name="bookname" placeholder="Search Book Title">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <form class="add-book" action="/addbook" method="post">
+    <%- include('messages') %>
+        <div class="text">Name of Book:</div><input type="text" name="bookname"><br>
+        <div class="text">Author(s):</div><input type="text" name="author"><br>
+        <p class="bs-component">
+            <button type="submit" style="width: 500px" class="btn btn-secondary btn-lg btn-block">Add</button>
+            </p>
+    </form>
+</div>
+
+</body>
+</html>
